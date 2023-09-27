@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First post route using Spring</title>
+    <link rel="stylesheet" type="text/css" href="/index.css">
+</head>
+<body>
+    <h1>Learning Spring Boot !</h1>
+    <h2>Counting words !</h2>
+    <form action="counting" method="post">
+    <label for="inputToCount">Write a sentence il the following area :</label>
+    <textarea id="inputToCount" name="inputToCount" rows="4" cols="20" placeholder="Write whatever come in mind ;)"></textarea>
+    <button type="submit">Submit !</button>
+    <h1>Word Counting Result</h1>
+    <ul>
+        <li th:each="entry : ${wordsOccurence}">
+            <span th:text="${entry.key}"></span> : <span th:text="${entry.value}"></span>
+        </li>
+    </ul>
+</form>
+</body>
+</html>
